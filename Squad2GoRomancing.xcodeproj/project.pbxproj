@@ -11,6 +11,9 @@
 		5311B73D2B7A1E9300F7799C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311B73C2B7A1E9300F7799C /* ContentView.swift */; };
 		5311B73F2B7A1E9400F7799C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5311B73E2B7A1E9400F7799C /* Assets.xcassets */; };
 		5311B7422B7A1E9400F7799C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5311B7412B7A1E9400F7799C /* Preview Assets.xcassets */; };
+		5311B7492B7A1EBE00F7799C /* Romancing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311B7482B7A1EBE00F7799C /* Romancing.swift */; };
+		5311B74B2B7A5F1600F7799C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311B74A2B7A5F1600F7799C /* CardView.swift */; };
+		5311B74D2B7A8CCF00F7799C /* FlyingNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311B74C2B7A8CCF00F7799C /* FlyingNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		5311B73C2B7A1E9300F7799C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5311B73E2B7A1E9400F7799C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5311B7412B7A1E9400F7799C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5311B7482B7A1EBE00F7799C /* Romancing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Romancing.swift; sourceTree = "<group>"; };
+		5311B74A2B7A5F1600F7799C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		5311B74C2B7A8CCF00F7799C /* FlyingNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingNote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				5311B73A2B7A1E9300F7799C /* Squad2GoRomancingApp.swift */,
 				5311B73C2B7A1E9300F7799C /* ContentView.swift */,
+				5311B74C2B7A8CCF00F7799C /* FlyingNote.swift */,
+				5311B74A2B7A5F1600F7799C /* CardView.swift */,
+				5311B7482B7A1EBE00F7799C /* Romancing.swift */,
 				5311B73E2B7A1E9400F7799C /* Assets.xcassets */,
 				5311B7402B7A1E9400F7799C /* Preview Content */,
 			);
@@ -137,7 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5311B74D2B7A8CCF00F7799C /* FlyingNote.swift in Sources */,
+				5311B7492B7A1EBE00F7799C /* Romancing.swift in Sources */,
 				5311B73D2B7A1E9300F7799C /* ContentView.swift in Sources */,
+				5311B74B2B7A5F1600F7799C /* CardView.swift in Sources */,
 				5311B73B2B7A1E9300F7799C /* Squad2GoRomancingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
