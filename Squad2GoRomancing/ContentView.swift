@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var pulsingAmount: CGFloat = 1
     @State private var card: Romancing?
     @State private var showFlyers = false
+    @State private var showSorry = false
     
     @State var models = romancings.map { romancing in
         FlyingNoteModel(card: romancing)
@@ -47,6 +48,10 @@ struct ContentView: View {
                         showFlyers = true
                         return
                     }
+                    if romancings.isEmpty {
+                        showSorry = true
+                        return
+                    }
                     guard let card = romancings.randomElement() else {
                         return
                     }
@@ -58,6 +63,10 @@ struct ContentView: View {
                     }
                     self.card = card
                 }
+            
+            if showSorry {
+                SorryView()
+            }
         }
         .onReceive(timer) {_ in
             models.forEach { model in
@@ -74,4 +83,19 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+struct SorryView: View {
+    var body: some View {
+        Text("""
+             That's all folks!
+             We are all out of romance 👋
+             """
+        )
+        .foregroundStyle(.pink)
+        .padding()
+        .background(.white.opacity(0.8))
+    }
+    
+    
 }

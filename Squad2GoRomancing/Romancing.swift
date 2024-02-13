@@ -19,19 +19,19 @@ var romancings: Set<Romancing> = [
         genre: .book,
         source: .yes("Kieran Pringle"),
         author: "Gabriel García Márquez",
-        year: 1985
+        year: "1985"
     ),
     
     Romancing(
         quote: "I know now why you cry",
         context: "The T-800 Terminator, wiping a tear from the young John Connor's cheek",
         whoSaidIt: "Arnold Schwarzenegger, as the T-800",
-        toWhom: "Edward Furlong, as John Connor",
+        toWhom: "Edward Furlong, as the young John Connor",
         title: "Terminator 2: Judgement Day",
         genre: .film,
-        source: .yes("Keith S"),
+        source: .yes("Anon Emus"),
         author: nil,
-        year: 1982
+        year: "1982"
     ),
     
     Romancing(
@@ -41,9 +41,9 @@ var romancings: Set<Romancing> = [
         toWhom: "Harrison Ford, as Deckard",
         title: "Blade Runner",
         genre: .film,
-        source: .yes("Keith S"),
+        source: .yes("Anon Emus"),
         author: "Adapted from Philip K. Dick's 'Do Androids Dream of Electric Sheep?'",
-        year: 1991
+        year: "1991"
     ),
     
     Romancing(
@@ -55,19 +55,19 @@ var romancings: Set<Romancing> = [
         genre: .film,
         source: .yes("Keith S"),
         author: nil,
-        year: 1942
+        year: "1942"
     ),
     
     Romancing(
         quote: "Who had a romantic first date in a thunderstorm and got hit by lightning (among many other things?)",
         context: "Wall-E, after reviving Eve with solar energy",
-        whoSaidIt: "Wall-E",
+        whoSaidIt: nil,
         toWhom: nil,
-        title: "",
+        title: "Wall-E",
         genre: .film,
-        source: .no,
+        source: .yes("Anon Emus"),
         author: "",
-        year: 2008
+        year: "2008"
     ),
     
     Romancing(
@@ -79,7 +79,7 @@ var romancings: Set<Romancing> = [
         genre: .song,
         source: .yes("Steve R"),
         author: "",
-        year: 1974
+        year: "1974"
     ),
     
     Romancing(
@@ -91,7 +91,7 @@ var romancings: Set<Romancing> = [
         genre: .song,
         source: .yes("Josh"),
         author: nil,
-        year: 1978
+        year: "1978"
     )
     
 ]
@@ -109,10 +109,10 @@ struct Romancing: Identifiable {
     let whoSaidIt: String?
     let toWhom: String?
     let title: String
-    let genre: Genre?
+    let genre: Genre
     let source: Source
     let author: String?
-    let year: Int?
+    let year: String?
     
     var offset = Angle(degrees: 0)
 
@@ -124,26 +124,26 @@ extension Romancing: Hashable {
         case no
     }
     
-    enum Genre {
-        case book
-        case film
-        case play
-        case poem
-        case song
+    enum Genre: String {
+        case book = "Book"
+        case film = "Film"
+        case play = "Play"
+        case poem = "Poem"
+        case song = "Song"
         
         var verb: String {
             switch self {
                 
             case .book:
-                "said by"
+                "Said by:"
             case .film:
-                "said by"
+                "Said by:"
             case .play:
-                "said by"
+                "Said by:"
             case .poem:
-                "written by"
+                "Written by:"
             case .song:
-                "sung by"
+                "Sung by:"
             }
         }
     }
