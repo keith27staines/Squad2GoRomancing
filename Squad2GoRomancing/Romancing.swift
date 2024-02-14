@@ -9,6 +9,30 @@ import Foundation
 import SwiftUI
 
 var romancings: Set<Romancing> = [
+    
+    Romancing(
+        quote: "You should be kissed and often, and by someone who knows how.",
+        context: "Rhett Butler in Gone With the Wind",
+        whoSaidIt: "Rhett Butler",
+        toWhom: "Scarlett O'Hara",
+        title: "Gone With The Wind",
+        genre: .book,
+        source: .yes("Anon"),
+        author: "Margaret Mitchell",
+        year: "1936"
+    ),
+    
+    Romancing(
+        quote: "Oh, here's an idea: Let's make pictures of our internal organs and give them to other people we love on Valentine's Day. That's not weird at all.",
+        context: " Jimmy Fallon - found via Good Housekeeping's top funny valentines day lines 😀",
+        whoSaidIt: "Hopefully nobody ever",
+        toWhom: nil,
+        title: "",
+        genre: .book,
+        source: .yes("SamK"),
+        author: "",
+        year: ""
+    ),
 
     Romancing(
         quote: "Very well, I will marry you if you promise not to make me eat eggplant.",
@@ -92,7 +116,57 @@ var romancings: Set<Romancing> = [
         source: .yes("Josh"),
         author: nil,
         year: "1978"
+    ),
+    
+    Romancing(
+        quote: "You had me at `hello'",
+        context: "A romantic line said in the 1996 film Jerry Maguire (and a whole bunch of other places there isn't room to mention here!)",
+        whoSaidIt: "Renée Zellweger, as Dorothy Boyd",
+        toWhom: "Tom Cruise, as Jerry Maguire",
+        title: "Jerry Maguire",
+        genre: .film,
+        source: .yes("Sara"),
+        author: "",
+        year: "1996"
+    ),
+    
+    Romancing(
+        quote: "Some people are worth melting for",
+        context: "Olaf saves Anna from getting freeze",
+        whoSaidIt: "Olaf",
+        toWhom: "Anna",
+        title: "Frozen",
+        genre: .film,
+        source: .yes("Anand"),
+        author: "",
+        year: "2013"
+    ),
+    
+    Romancing(
+        quote: "A true love story never ends",
+        context: "From a Valentine's card (received this morning?)",
+        whoSaidIt: "",
+        toWhom: "",
+        title: "",
+        genre: .other,
+        source: .yes("Kaustav"),
+        author: "",
+        year: ""
+    ),
+    
+    Romancing(
+        quote: "I fell in love the way you fall asleep: slowly, and then all at once",
+        context: "In the book, Hazel and Augustus agree to read stories to each other. Hazel falls in love with him as he reads to her.",
+        whoSaidIt: "Hazel Grace Lancaster",
+        toWhom: "Augustus Waters",
+        title: "The Fault in Our Stars",
+        genre: .book,
+        source: .yes("Sohel"),
+        author: "John Green",
+        year: "2012"
     )
+    
+
     
 ]
 
@@ -130,10 +204,11 @@ extension Romancing: Hashable {
         case play = "Play"
         case poem = "Poem"
         case song = "Song"
+        case quote = "Quote"
+        case other = "Other"
         
         var verb: String {
             switch self {
-                
             case .book:
                 "Said by:"
             case .film:
@@ -144,6 +219,10 @@ extension Romancing: Hashable {
                 "Written by:"
             case .song:
                 "Sung by:"
+            case .quote:
+                "Said by:"
+            case .other:
+                ""
             }
         }
     }

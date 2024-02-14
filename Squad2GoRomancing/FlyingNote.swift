@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let colors: [Color] = [.pink, .yellow, .pink, .blue, .purple, .brown, .pink]
+let colors: [Color] = [.pink, .yellow, .orange, .blue, .green, .purple, .brown, .indigo, .mint, .teal]
 
 
 class FlyingNoteModel: ObservableObject, Identifiable {
@@ -19,12 +19,15 @@ class FlyingNoteModel: ObservableObject, Identifiable {
     }()
     
     var t0: Double = Date.timeIntervalSinceReferenceDate
+    var angle: Angle = .zero
+    var t: Double = 0
     
-    var t: Double = 0 {
-        didSet {
-
-        }
-    }
+    lazy var axis: (x: CGFloat, y: CGFloat, z: CGFloat) = {
+        let x = CGFloat.random(in: -1.0...1.0)
+        let y = CGFloat.random(in: -1.0...1.0)
+        let z = CGFloat.random(in: -1.0...1.0)
+        return (x: x, y: y, z: z)
+    }()
     
     let foregroundColor = colors.randomElement()
     
@@ -33,6 +36,7 @@ class FlyingNoteModel: ObservableObject, Identifiable {
         let x = r*(1+sin(speed*t)) * cos(speed*t + delta)
         let y = r * sin(speed*t + delta)
         offSet = CGSize(width: CGFloat(x), height: CGFloat(y))
+        angle = Angle(radians: speed*t + delta)
     }
     
     @Published var offSet: CGSize = .zero
@@ -49,7 +53,7 @@ class FlyingNoteModel: ObservableObject, Identifiable {
 struct FlyingNote: View {
 
     @ObservedObject var model: FlyingNoteModel
-
+    
     var body: some View {
         VStack {
             Image(systemName: "giftcard.fill")
@@ -58,6 +62,11 @@ struct FlyingNote: View {
                 .background(.white)
                 .foregroundColor(model.foregroundColor)
         }
+        .rotation3DEffect(
+            model.angle,
+            axis: model.axis
+        )
+        .scaleEffect(/*@START_MENU_TOKEN@*/CGSize(width: 1.0, height: 1.0)/*@END_MENU_TOKEN@*/)
         .offset(model.offSet)
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct CardDetailView: View {
     
     @State private var detailOpacity = 0.0
+    @State private var angle: Angle = .zero
     
     let width = CGFloat(300)
     let height = CGFloat(500)
@@ -38,6 +39,7 @@ struct CardDetailView: View {
                     )
                 )
             }
+
             RoundedRectangle(cornerRadius: 25.0)
                 .fill(.black.opacity(0.4))
                 .frame(width: width, height: height)
